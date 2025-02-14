@@ -133,10 +133,6 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 
-showMore.addEventListener("click",()=>{
-    page++;
-    searchImages();
-})
 
 // Load more images
 showMore.addEventListener("click", () => {
