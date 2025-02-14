@@ -13,7 +13,7 @@ const favButton = document.querySelector(".fav");
 
 let keyword = "";
 let page = 1;
-let favorites = JSON.parse(localStorage.getItem("favorites")) || []; // Fixed: Declared favorites array
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 // Fetch and display images
 async function searchImages() {
@@ -92,7 +92,7 @@ function displayFavorites() {
             modalDetails.innerText = item.alt;
         });
 
-        // Remove button
+    
         const removeButton = document.createElement("button");
         removeButton.innerText = "Remove image";
         removeButton.classList.add("remove-favorite-btn");
