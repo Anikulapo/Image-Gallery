@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
     <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="icon" href="../images/pic.png">
 </head>
 <body>
     <h1>Image Searcher</h1>
     <img src="../images/moon-svgrepo-com.svg" alt="sun" class="sun" id="icon">
+
+
     <form action="" method="post" class="search-form">
         <input type="text" class="search-bar" placeholder="Search for Any Image here.....">
         <button class="btn">Search</button>
     </form>
+
+
     <div class="search-result"></div>
     <button class="show-more">Show More</button>
 
 
+    <div class="modal">
+        <span class="close-modal">&times;</span>
+        <img src="" alt="Large view">
+        <div class="details"></div>
+    </div>
+
+
+    <button class="fav">Favorites</button>
+    <div class="favorites-grid"></div>
 
     <script src="../Js/Work.js"></script>
     <script>
@@ -25,8 +39,8 @@
             document.body.classList.toggle("dark-theme")
             if(document.body.classList.contains("dark-theme")){
                 icon.src = "../images/Sun2 (1).svg";
-            }
-            else{
+                
+            } else {
                 icon.src = "../images/moon-svgrepo-com.svg";
             }
         })
