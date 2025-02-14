@@ -13,6 +13,7 @@ const favButton = document.querySelector(".fav");
 
 let keyword = "";
 let page = 1;
+let favorites = JSON.parse(localStorage.getItem("favorites")) || []; // Fixed: Declared favorites array
 
 // Fetch and display images
 async function searchImages() {
@@ -29,7 +30,7 @@ async function searchImages() {
             imgContainer.classList.add("image-container");
 
             const imgElement = document.createElement("img");
-            imgElement.classList.add("results")
+            imgElement.classList.add("results");
             imgElement.src = photo.urls.small;
             imgElement.alt = photo.alt_description || "Image";
             imgElement.classList.add("gallery-image");
@@ -47,10 +48,9 @@ async function searchImages() {
             favoriteButton.src = "../images/plus2.svg"; 
             favoriteButton.alt = "+";
 
-            // Handle adding/removing from favorites
+            // Handle adding to favorites
             favoriteButton.addEventListener("click", () => {
                 addToFavorites(photo.urls.small, photo.alt_description);
-
             });
 
             imgContainer.appendChild(imgElement);
@@ -94,7 +94,7 @@ function displayFavorites() {
 
         // Remove button
         const removeButton = document.createElement("button");
-        removeButton.innerText = "Remove Image";
+        removeButton.innerText = "Remove image";
         removeButton.classList.add("remove-favorite-btn");
 
         removeButton.addEventListener("click", () => {
@@ -114,12 +114,12 @@ function removeFromFavorites(imageUrl) {
     displayFavorites();
 }
 
-//Favorite Section Visibility
+// Toggle Favorite Section Visibility
 favButton.addEventListener("click", () => {
     favoritesGrid.classList.toggle("hidden");
 });
 
-
+// Close modal
 closeModal.addEventListener("click", () => {
     modal.style.display = "none";
 });
@@ -131,8 +131,6 @@ searchForm.addEventListener("submit", (e) => {
     searchResult.innerHTML = "";
     searchImages();
 });
-
-
 
 // Load more images
 showMore.addEventListener("click", () => {
