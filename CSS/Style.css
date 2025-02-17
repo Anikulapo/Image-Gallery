@@ -258,7 +258,35 @@ form{
         right: 20%;
     }
     .sun{
-        top: 12%;
+        top: 11.5%;
+    }
+}
+@media screen and (max-width: 850px){
+    .sun{
+        top: 9%;
+    }
+}
+@media screen and (max-width: 380px){
+    .sun{
+        top: 15%;
+    }
+}
+@media screen and (max-width: 1050px){
+    .sun{
+        top: 7.6%;
+        left: 30%;
+    }
+}
+@media screen and (max-width: 550px){
+    .sun{
+        top: 15%;
+        left: 20%;
+    }
+}
+@media screen and (max-width: 430px){
+    .sun{
+        top: 10.5%;
+        left: 10%;
     }
 }
 
